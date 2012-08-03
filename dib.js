@@ -19,41 +19,34 @@ function(sail, DOM) {
     return this;
   }
   
-  Dib.prototype.create = function(options) {
-    options = options || {};
-    
+  Dib.prototype.create = function(locals, options) {
     var render = sail.render
       , $ = sail.$;
     
-    // TODO: Return template, or rendered html ???
-    var html = render(this._name, options);
-    
-    // TODO: Handle object results from render
-    // TODO: Handle optino to not wrap the HTML in an element
+    var out = render(this._name, locals, options)
+      , el;
     
     // TODO: Figure out how to extract variables for binding layer.
-    // TODO: Implement option to wrap this in a div or not.  Default true.
-    //       Wrapping in a div allows $.html() swaps of content, rather than
-    //       replacing the DOM element.  Is this beneficial?
-    // TODO: Perhaps better - implement an option to unwrap the top element
-    //       in the template, then attach a el.render() function to the DOM
-    //       node.
-    
-    var el;
     
     if (this._container) {
       el = $(DOM.create(this._container['tag'], this._container['attrs']));
-      el.html(html)
+      if (typeof out == 'string') {
+        el.html(out);
+      } else if (typeof out == 'function') {
+        el._template = out;
+        el.render(locals, options);
+      } else {
+        throw new Error('Invalid template: render() must return a string or function');
+      }
     } else {
-      el = $(html)
+      if (typeof out == 'string') {
+        el = $(out);
+      } else if (typeof out == 'function') {
+        el = $(out(locals, options));
+      } else {
+        throw new Error('Invalid template: render() must return a string or function');
+      }
     }
-    
-    // FIXME: Do we want to save the rendering here?
-    //el._template = template;
-    //if (render) { el._render = render }
-    //if (locals) { el.render(locals) }
-    //connect(el, self._events, self._target);
-    //cb(null, el);
     
     connect(el, this._events, this._target);
     return el;
