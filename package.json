@@ -1,0 +1,30 @@
+{
+  "name": "dib",
+  "version": "0.0.0",
+  "description": "DOM interface bundle.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sailjs/dib.git"
+  },
+  "bugs": {
+    "url": "http://github.com/sailjs/dib/issues"
+  },
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "dib",
+  "amd": {},
+  "volo": {
+    "dependencies": {
+      "anchor": "github:anchorjs/anchor"
+    }
+  }
+}
