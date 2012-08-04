@@ -3,7 +3,7 @@ define(['sail',
 function(sail, DOM) {
   
   function Dib(name) {
-    // TODO: Implement ability to pass elements directly (??)
+    // TODO: Implement ability to pass element directly. (??)
     
     this._name = name;
   }
@@ -27,6 +27,9 @@ function(sail, DOM) {
       , el;
     
     // TODO: Figure out how to extract variables for binding layer.
+    // TODO: Implment support for renderers which return an in-DOM element
+    //       directly as output.
+    //       (ex: document.getElementById('modal-backdrop');)
     
     if (this._container) {
       el = $(DOM.create(this._container['tag'], this._container['attrs']));
@@ -53,6 +56,7 @@ function(sail, DOM) {
   }
   
   
+  // TODO: Review this function.
   function connect(el, e, t) {
     var events = e;
     for (var key in events) {
