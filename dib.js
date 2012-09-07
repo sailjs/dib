@@ -1,6 +1,6 @@
-define(['sail',
-        'anchor/dom'],
-function(sail, DOM) {
+define(['dom',
+        'sail'],
+function(DOM, sail) {
   
   function Dib(name) {
     // TODO: Implement ability to pass element directly. (??)
@@ -20,8 +20,8 @@ function(sail, DOM) {
   }
   
   Dib.prototype.create = function(locals, options) {
-    var render = sail.render
-      , $ = sail.$;
+    var $ = sail.$
+      , render = sail.render;
     
     var out = render(this._name, locals, options)
       , el;

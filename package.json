@@ -24,7 +24,8 @@
   "amd": {},
   "volo": {
     "dependencies": {
-      "anchor": "github:anchorjs/anchor"
+      "dom": "github:anchorjs/dom/master",
+      "sail": "github:sailjs/sail/master"
     }
   }
 }
