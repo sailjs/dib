@@ -23,6 +23,7 @@
   "main": "dib",
   "amd": {},
   "volo": {
+    "baseUrl": "vendor",
     "dependencies": {
       "dom": "github:anchorjs/dom/master",
       "sail": "github:sailjs/sail/master"
