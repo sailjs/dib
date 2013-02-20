@@ -1,6 +1,6 @@
-define(['dom',
-        'render'],
-function(DOM, sail) {
+define(['render',
+        'dom'],
+function(render, dom) {
   
   function Dib(name) {
     // TODO: Implement ability to pass element directly. (??)
@@ -20,8 +20,8 @@ function(DOM, sail) {
   }
   
   Dib.prototype.create = function(locals, options) {
-    var $ = sail.$
-      , render = sail.render;
+    var $ = render.$
+      , render = render.render;
     
     var out = render(this._name, locals, options)
       , el;
@@ -32,7 +32,7 @@ function(DOM, sail) {
     //       (ex: document.getElementById('modal-backdrop');)
     
     if (this._container) {
-      el = $(DOM.create(this._container['tag'], this._container['attrs']));
+      el = $(dom.create(this._container['tag'], this._container['attrs']));
       if (typeof out == 'string') {
         el.html(out);
       } else if (typeof out == 'function') {
