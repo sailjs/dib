@@ -20,10 +20,7 @@ function(render, dom) {
   }
   
   Dib.prototype.create = function(locals, options) {
-    var $ = render.$
-      , render = render.render;
-    
-    var out = render(this._name, locals, options)
+    var out = render.render(this._name, locals, options)
       , el;
     
     // TODO: Figure out how to extract variables for binding layer.
@@ -32,7 +29,7 @@ function(render, dom) {
     //       (ex: document.getElementById('modal-backdrop');)
     
     if (this._container) {
-      el = $(dom.create(this._container['tag'], this._container['attrs']));
+      el = render.$(dom.create(this._container['tag'], this._container['attrs']));
       if (typeof out == 'string') {
         el.html(out);
       } else if (typeof out == 'function') {
@@ -43,9 +40,9 @@ function(render, dom) {
       }
     } else {
       if (typeof out == 'string') {
-        el = $(out);
+        el = render.$(out);
       } else if (typeof out == 'function') {
-        el = $(out(locals, options));
+        el = render.$(out(locals, options));
       } else {
         throw new Error('Invalid template: render() must return a string or function');
       }
