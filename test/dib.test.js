@@ -1,7 +1,5 @@
-define(['dib/dib',
-        'chai'],
-function(Dib, chai) {
-  var expect = chai.expect;
+define(['dib'],
+function(Dib) {
 
   describe("dib", function() {
     

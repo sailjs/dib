@@ -1,5 +1,5 @@
 define(['dom',
-        'sail'],
+        'render'],
 function(DOM, sail) {
   
   function Dib(name) {
