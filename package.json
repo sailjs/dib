@@ -1,7 +1,7 @@
 {
   "name": "dib",
   "version": "0.0.0",
-  "description": "DOM interface bundle.",
+  "description": "DOM interface bundle for Sail.js.",
   "repository": {
     "type": "git",
     "url": "git://github.com/sailjs/dib.git"

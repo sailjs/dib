@@ -1,0 +1,15 @@
+{
+  "name": "dib",
+  "version": "0.0.0",
+  "description": "DOM interface bundle for Sail.js.",
+  "repo": "sailjs/dib",
+  "main": "dib.js",
+  "scripts": [
+    "dib.js"
+  ],
+  "dependencies": {
+    "anchorjs/dom": "*",
+    "sailjs/render": "*"
+  },
+  "license": "MIT"
+}
