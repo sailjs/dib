@@ -8,8 +8,7 @@ require.config({
   packages: [
     { name: 'dib', location: '../../../..', main: 'dib' },
     { name: 'dom' },
-    { name: 'render' },
-    { name: 'mocha-cloud', location: '../support', main: 'mocha-cloud' }
+    { name: 'render' }
   ],
   shim: {
     'mocha': {
