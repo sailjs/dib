@@ -1,19 +1,17 @@
 # Sail / Dib
 
-## Tests
+DOM interface bundle used within Sail.js applications.
 
-##### Browser
+## Tests
 
 To run tests in a browser, execute the Make target for the desired browser:
 
     $ make test-chrome
     $ make test-firefox
     $ make test-safari
-
-##### PhantomJS
-
-To run headless tests from a terminal using [PhantomJS](http://phantomjs.org/):
-
+    
+Headless tests can be executed directly from a terminal:
+    
     $ make test-phantomjs
 
 ## Credits
